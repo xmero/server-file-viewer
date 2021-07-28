@@ -1,9 +1,8 @@
 import React from 'react';
 
+import { IMAGE_EXT } from '../config/constants'
 import ImageFile from './ImageFile';
 import CodeFile from './CodeFile';
-
-const IMAGE_EXT = ['png', 'jpg', 'gif', 'bmp', 'jpeg']
 
 const FileContent = ({ ext, path }) => {
 

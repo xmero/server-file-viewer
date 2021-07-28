@@ -4,13 +4,11 @@ import { Collapse } from 'antd';
 import { AiOutlineFolder } from 'react-icons/ai';
 import fetchData from '../services/fetch-data';
 
+import { FETCH_TYPE_DIR, MARGIN_INCREMENT } from '../config/constants'
 import Loader from './Loader';
 import File from './File';
 
 const { Panel } = Collapse;
-
-const FETCH_TYPE = 'directory';
-const MARGIN_INCREMENT = 20;
 
 const Directory = ({ path, margin = 0 }) => {
     const [fileTree, setFileTree] = useState(null);
@@ -21,7 +19,7 @@ const Directory = ({ path, margin = 0 }) => {
     }, []);
 
     const getData = async () => {
-        const data = await fetchData(FETCH_TYPE, path);
+        const data = await fetchData(FETCH_TYPE_DIR, path);
         setFileTree(data);
     };
 

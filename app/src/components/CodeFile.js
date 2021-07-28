@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
+import { FETCH_TYPE_FILE } from '../config/constants'
 import Loader from './Loader';
 import fetchData from '../services/fetch-data';
 import SyntaxHighlighter from 'react-syntax-highlighter';
-
-const FETCH_TYPE = 'file';
 
 const CodeFile = ({ ext, path }) => {
 
@@ -15,7 +14,7 @@ const CodeFile = ({ ext, path }) => {
     }, []);
 
     const getData = async () => {
-        const data = await fetchData(FETCH_TYPE, path);
+        const data = await fetchData(FETCH_TYPE_FILE, path);
         setFileContent(data);
     };
 
@@ -27,7 +26,6 @@ const CodeFile = ({ ext, path }) => {
         <SyntaxHighlighter language={ext}>
             {ext === 'json' ? processJSON(fileContent) : fileContent}
         </SyntaxHighlighter>
-
     )
 }
 

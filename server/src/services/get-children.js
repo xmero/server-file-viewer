@@ -2,7 +2,7 @@ const fs = require('fs');
 
 const getType = require('./get-type');
 
-const BLACKLIST = ['.gitignore', 'node_modules','package-lock.json'];
+const BLACKLIST = ['.gitignore', 'node_modules','package-lock.json','.DS_Store'];
 
 const getChildren = (path) => {
   const children = fs.readdirSync(path).filter((child) => !BLACKLIST.includes(child));

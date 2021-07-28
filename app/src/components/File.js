@@ -1,13 +1,13 @@
 import React from 'react';
+
 import FILE_ICONS from '../utils/extension-map';
 import { AiOutlineFile } from 'react-icons/ai';
 import { Collapse, Button } from 'antd';
 
+import { API_FILE_DOWNLOAD } from '../config/constants'
 import FileContent from './FileContent';
 
 const { Panel } = Collapse;
-
-const API_FILE_DOWNLOAD = 'http://localhost:8080/download/';
 
 const File = ({ path, margin }) => {
 
